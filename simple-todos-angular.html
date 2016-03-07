@@ -1,0 +1,49 @@
+<head>
+  <title>listas</title>
+</head>
+
+<body>
+<div class="container"
+     ng-app="simple-todos"
+     ng-controller="TodosListCtrl">
+	 
+	 
+  <header>
+  <h1>List Driver( {{ incompleteCount() }} )</h1>
+	
+	 <label class="Filter-drivers">
+      <input type="checkbox" ng-model="filterDrivers"/>
+      Filter
+    </label>
+	
+ <login-buttons></login-buttons>
+	
+	
+	 <form class="new-driver"
+          ng-submit="addDriver(newDriver); newDriver='';"
+          ng-show="$root.currentUser">
+      <input ng-model="newDriver" type="text"
+             name="text" placeholder="add new Driver" />
+    </form>
+  </header>
+ 
+  <ul>
+        <li ng-repeat="driver in drivers" ng-class="{'checked': driver.checked}">
+     <!--<button class="delete" ng-click="drivers.remove(driver)">&times;</button>
+ 
+      <input type="checkbox" ng-model="driver.checked" class="toggle-checked" />-->
+	    <button class="delete" ng-click="deleteDriver(driver)">&times;</button>
+ 
+        <input type="checkbox" ng-checked="driver.checked" ng-click="setChecked(driver)" class="toggle-checked" />
+ 
+ 
+      <span class="text">{{driver.text}}</span>
+    </li>
+  </ul>
+</div>
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
