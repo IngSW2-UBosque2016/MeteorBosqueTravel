@@ -1,0 +1,31 @@
+<head>
+  <title>Rutas</title>
+</head>
+
+<body>
+  <h1>Rutas Chia</h1>
+  {{> map}}
+  
+ 
+</body>
+
+<template name="map">
+    <div class="map">
+        {{> googleMap name="map" options=mapOptions}}
+    </div>
+    <div class="places">
+        {{#each places}}
+            <li>{{name}}</li>
+        {{/each}}
+    </div>
+</template>
+<!--<template name="map2">
+    <div class="map2">
+        {{> googleMap name="map" options=mapOptions}}
+    </div>
+    <div class="places2">
+        {{#each places2}}
+            <li>{{name}}</li>
+        {{/each}}
+    </div>
+</template>-->
